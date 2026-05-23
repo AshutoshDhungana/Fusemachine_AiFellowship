@@ -1,0 +1,44 @@
+2026-05-12 22:46:56 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "user"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 22:50:39 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 22:51:29 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 22:52:14 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 22:53:06 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 23:02:09 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 23:06:44 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 23:09:01 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 23:12:52 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 23:13:59 | ERROR    | database | Failed to connect to database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "ashutosh"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-05-12 23:18:16 | INFO     | database | Database connection established successfully.
+2026-05-12 23:18:16 | INFO     | __main__ | FastAPI application started. Visit /docs for Swagger UI.
+2026-05-12 23:20:01 | INFO     | database | Database connection established successfully.
+2026-05-12 23:20:23 | INFO     | database | Database connection established successfully.
+2026-05-12 23:20:23 | INFO     | main | FastAPI application started. Visit /docs for Swagger UI.
+2026-05-12 23:21:54 | INFO     | dashboard | GET /customers/count — incoming request.
+2026-05-12 23:21:54 | DEBUG    | crud | Counting customers table.
+2026-05-12 23:21:54 | INFO     | crud | customers count = 122
+2026-05-12 23:21:54 | INFO     | dashboard | GET /customers/count — response: 122
+2026-05-12 23:21:54 | DEBUG    | database | Database session closed.
+2026-05-12 23:38:19 | INFO     | database | Database connection established successfully.
+2026-05-12 23:38:19 | INFO     | main | FastAPI application started.
+2026-05-12 23:38:20 | INFO     | database | Database connection established successfully.
+2026-05-12 23:38:20 | INFO     | main | FastAPI application started.
