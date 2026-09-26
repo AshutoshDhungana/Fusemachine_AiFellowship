@@ -1,0 +1,46 @@
+# docker compose up --build                 -> api + ui (Gemini primary, fallback chain without local model)
+# docker compose --profile gpu up --build   -> also starts vLLM (Qwen2.5-1.5B-Instruct on the RTX 4070)
+services:
+  api:
+    build: .
+    env_file: .env
+    environment:
+      VLLM_BASE_URL: http://vllm:8000/v1
+    ports: ["8080:8080"]
+    volumes:
+      - ./data:/app/data            # papers/ + persisted chroma index
+      - ./artifacts:/app/artifacts  # router_onnx/
+      - model-cache:/cache
+    restart: unless-stopped
+
+  ui:
+    build: {context: ., dockerfile: Dockerfile.ui}
+    environment:
+      API_URL: http://api:8080
+    ports: ["8501:8501"]
+    depends_on: [api]
+    restart: unless-stopped
+
+  vllm:
+    profiles: ["gpu"]
+    image: vllm/vllm-openai:latest
+    command: >
+      --model Qwen/Qwen2.5-1.5B-Instruct
+      --served-model-name Qwen/Qwen2.5-1.5B-Instruct
+      --gpu-memory-utilization 0.80
+      --max-model-len 8192
+      --max-num-seqs 16
+      --enable-auto-tool-choice --tool-call-parser hermes
+      --enable-prefix-caching
+    ports: ["8000:8000"]
+    volumes:
+      - model-cache:/root/.cache/huggingface
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices: [{driver: nvidia, count: 1, capabilities: [gpu]}]
+    restart: unless-stopped
+
+volumes:
+  model-cache:

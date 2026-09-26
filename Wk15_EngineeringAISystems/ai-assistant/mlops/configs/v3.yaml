@@ -1,0 +1,7 @@
+version: v3
+prompt: agent_v3
+top_k: 4            # hypothesis: 5th chunk rarely cited (check citations in v2 traces); saves ~250 tokens/search
+temperature: 0.1    # fewer paraphrased numbers
+max_steps: 10       # comparison questions over 3 entities need up to 2N+1 = 7 steps plus one retry
+verify: true
+primary_model: gemini-2.5-flash

@@ -1,0 +1,7 @@
+version: v1
+prompt: agent_v1
+top_k: 5
+temperature: 0.2
+max_steps: 8
+verify: true
+primary_model: gemini-2.5-flash

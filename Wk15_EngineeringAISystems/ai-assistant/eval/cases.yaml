@@ -1,0 +1,115 @@
+# W16 evaluation set for the research agent.
+# type: answer | clarify | refuse
+# expected_papers: chunks from ALL of these must be cited (cross-source cases list >1)
+# keywords: list of any-of groups; every group must match the answer (case-insensitive)
+# expected_tools: tools a correct trajectory must use
+# max_steps_expected: what we consider a reasonable trajectory length
+cases:
+  - id: q01_ai4va_repr
+    type: answer
+    query: What code representation does the AI4VA pipeline use, and which neural network is trained on it?
+    expected_papers: [ai4va]
+    keywords: [["code property graph", "cpg"], ["gated graph", "ggnn", "graph neural"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 4
+  - id: q02_vudenc_types
+    type: answer
+    query: Which vulnerability types does VUDENC cover, and what model architecture does it use?
+    expected_papers: [vudenc]
+    keywords: [["sql injection", "xss", "command injection"], ["lstm", "long short-term", "long-short-term"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 4
+  - id: q03_tencent_fp
+    type: answer
+    query: In the Tencent industrial study, what share of false positives could LLM-based hybrid techniques eliminate, and what did it cost per alarm?
+    expected_papers: [fp_reduction]
+    keywords: [["94", "98"], ["$", "second", "cost"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 4
+  - id: q04_malcodeai_model
+    type: answer
+    query: Which base model and fine-tuning method does MalCodeAI use?
+    expected_papers: [malcodeai]
+    keywords: [["qwen"], ["lora", "low-rank"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 4
+  - id: q05_cyberllm_coverage
+    type: answer
+    query: In CyberLLM, how much of the labelled vulnerabilities does the deterministic layer cover alone, versus after adding the LLM refinement passes?
+    expected_papers: [cyberllm]
+    keywords: [["34"], ["70", "0.83"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 4
+  - id: q06_gap_generalization
+    type: answer
+    query: What two techniques does the GAP framework use to improve the generalization of pentesting agents?
+    expected_papers: [gap_pentest]
+    keywords: [["domain randomization"], ["meta"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 4
+  - id: q07_esbmc_llm
+    type: answer
+    query: How has ESBMC been combined with large language models or AI agents?
+    expected_papers: [esbmc]
+    keywords: [["llm", "language model"], ["self-healing", "invariant", "agent", "repair"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 5
+  - id: q08_compare_ai4va_linevd
+    type: answer
+    query: Compare how AI4VA and LineVD use graph neural networks. At what granularity does each one make predictions?
+    expected_papers: [ai4va, linevd]
+    keywords: [["statement"], ["function", "sample", "program"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 6
+  - id: q09_compare_cyberllm_malcodeai
+    type: answer
+    query: Compare CyberLLM and MalCodeAI. Which design is more appropriate for a safety-critical automotive setting, and why?
+    expected_papers: [cyberllm, malcodeai]
+    keywords: [["cyberllm"], ["safety", "guard", "oracle", "deterministic"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 7
+  - id: q10_graph_vs_sequence
+    type: answer
+    query: Across the corpus, which approaches represent code as graphs and which as token sequences? Recommend one for statement-level C/C++ detection.
+    expected_papers: [linevd, vudenc]
+    keywords: [["linevd"], ["graph"], ["sequence", "lstm", "token"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 8
+  - id: q11_devsecops_limits
+    type: answer
+    query: What limitations of datasets and evaluation practices does the DevSecOps review identify?
+    expected_papers: [devsecops]
+    keywords: [["dataset", "benchmark"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 4
+  - id: q12_fp_vs_cyberllm_precision
+    type: answer
+    query: Both the Tencent false-positive study and CyberLLM combine static/deterministic analysis with an LLM. How does each use the LLM to improve precision?
+    expected_papers: [fp_reduction, cyberllm]
+    keywords: [["false positive", "false alarm"], ["refine", "refinement", "deterministic"]]
+    expected_tools: [search_papers]
+    max_steps_expected: 7
+  - id: q13_ambiguous_better
+    type: clarify
+    query: Which one performed better?
+    expected_papers: []
+    keywords: []
+    expected_tools: [ask_user]
+    max_steps_expected: 2
+  - id: q14_ambiguous_paper
+    type: clarify
+    query: Summarize the results of the paper.
+    expected_papers: []
+    keywords: []
+    expected_tools: [ask_user]
+    max_steps_expected: 3
+  - id: q15_out_of_corpus
+    type: refuse
+    query: What does the corpus report about post-quantum cryptography for Ethereum smart contracts?
+    expected_papers: []
+    keywords: []
+    expected_tools: [search_papers]
+    max_steps_expected: 4
+
+# Failure-injection cases (run with --inject): these must end as insufficient_evidence/error, never a confident answer
+injection_cases: [q01_ai4va_repr, q05_cyberllm_coverage, q08_compare_ai4va_linevd]

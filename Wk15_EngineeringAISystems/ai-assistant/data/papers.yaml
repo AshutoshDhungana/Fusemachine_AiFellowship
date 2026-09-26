@@ -1,0 +1,38 @@
+# Knowledge base: reference papers from the CodebaseVulScanner research project.
+# id -> file + short title. The ids are what tools/citations use.
+ai4va:
+  file: 2006.08614v1.pdf
+  title: "Learning to map source code to software vulnerability using code-as-a-graph (AI4VA, IBM, 2019)"
+vudenc:
+  file: 2201.08441v1.pdf
+  title: "VUDENC: Vulnerability Detection with Deep Learning on a Natural Codebase for Python (2022)"
+linevd:
+  file: 2203.05181v2.pdf
+  title: "LineVD: Statement-level Vulnerability Detection using Graph Neural Networks (2022)"
+survey_mldl:
+  file: 2306.11673v1.pdf
+  title: "A Survey on Automated Software Vulnerability Detection Using ML and DL (2023)"
+gap_pentest:
+  file: 2412.04078v2.pdf
+  title: "Mind the Gap: Generalizable Autonomous Penetration Testing via Domain Randomization and Meta-RL (2025)"
+malcodeai:
+  file: 2507.10898v1.pdf
+  title: "MalCodeAI: Autonomous Vulnerability Detection and Remediation via Language Agnostic Code Reasoning (2025)"
+fp_reduction:
+  file: 2601.18844v1.pdf
+  title: "Reducing False Positives in Static Bug Detection with LLMs: An Empirical Study in Industry (Tencent, 2026)"
+transformer_slr:
+  file: 2604.24822v1.pdf
+  title: "A Systematic Literature Review for Transformer-based Software Vulnerability Detection (2026)"
+esbmc:
+  file: 2605.26169v2.pdf
+  title: "ESBMC: A Survey of its Evolution, Integration, and Future Directions in Formal Software Verification (2026)"
+cyberllm:
+  file: 2608.06651v1.pdf
+  title: "CyberLLM: A Multi-Agent LLM Framework for Autonomous Detection and Guarded Response in Automotive Cybersecurity (2026)"
+devsecops:
+  file: 02_AkshayBansal-ResearchPaper+-+Akshay+Bansal.pdf
+  title: "Autonomous Security Testing and Vulnerability Prediction in Cloud-Native DevSecOps Using AI (2025)"
+lit_review:
+  file: LR-CodebaseVulnerabilityScanner.pdf
+  title: "Literature Review: C/C++ Vulnerability Detection Using Pretrained Code Models and Code Property Graphs (project LR)"

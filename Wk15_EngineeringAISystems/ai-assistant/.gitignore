@@ -1,0 +1,10 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+data/chroma/
+artifacts/*.onnx
+artifacts/router_encoder/
+mlruns/
+mlartifacts/
+eval/results/*.jsonl
